@@ -29,6 +29,7 @@ projects:
       - .github
       - test-release-drafter-action-adapter
       - vault-cli-docker-repro
+      - jetersen.nuget.test
 
 social_media:
   # behance: your_username
