@@ -52,6 +52,10 @@ topics:
   - name: .NET
     web_url: https://github.com/topics/dotnet
     image_url: https://raw.githubusercontent.com/github/explore/93d8a67084f94b2a444e510199a6e7622e5b09a3/topics/dotnet/dotnet.png
+    
+  - name: Rust
+    web_url: https://github.com/topics/rust
+    image_url: https://raw.githubusercontent.com/github/explore/93d8a67084f94b2a444e510199a6e7622e5b09a3/topics/rust/rust.png
 
   - name: Kubernetes
     web_url: https://github.com/topics/kubernetes
