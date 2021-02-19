@@ -30,6 +30,8 @@ projects:
       - test-release-drafter-action-adapter
       - vault-cli-docker-repro
       - jetersen.nuget.test
+      - jetersen
+      - workflows
 
 social_media:
   # behance: your_username
@@ -40,6 +42,7 @@ social_media:
   keybase: jetersen
   linkedin: jetersen
   # mastodon: your_username
+  matrix: "@jetersen:matrix.org"
   # medium: your_username
   # stackoverflow: your_user_id
   # telegram: your_username
@@ -53,7 +56,7 @@ topics:
   - name: .NET
     web_url: https://github.com/topics/dotnet
     image_url: https://raw.githubusercontent.com/github/explore/93d8a67084f94b2a444e510199a6e7622e5b09a3/topics/dotnet/dotnet.png
-    
+
   - name: Rust
     web_url: https://github.com/topics/rust
     image_url: https://raw.githubusercontent.com/github/explore/93d8a67084f94b2a444e510199a6e7622e5b09a3/topics/rust/rust.png
