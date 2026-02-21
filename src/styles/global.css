@@ -175,20 +175,18 @@ nav .dot {
   margin-bottom: 2rem;
 }
 
-/* Interests list */
-.interests-list {
-  list-style: none;
-  padding: 0;
+/* Interests links */
+.interests-links {
+  font-size: 0.875rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
 }
 
-.interests-list li {
-  padding: 0.25rem 0;
-}
-
-.interests-list li::before {
-  content: '▸';
-  color: var(--accent);
-  margin-right: 0.75rem;
+.interests-links .dot {
+  color: var(--text-muted);
+  user-select: none;
 }
 
 /* Repo list */

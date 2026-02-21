@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { SITE_NAME, GITHUB_USERNAME } from '../consts';
+import { SITE_NAME, GITHUB_USERNAME, INTERESTS } from '../consts';
 
 interface GitHubRepo {
   name: string;
@@ -63,14 +63,14 @@ try {
 
     <section>
       <h2 class="section-header">Interests</h2>
-      <ul class="interests-list">
-        <li>.NET</li>
-        <li>Zig</li>
-        <li>Rust</li>
-        <li>Niri</li>
-        <li>Kubernetes</li>
-        <li>Home Assistant</li>
-      </ul>
+      <div class="interests-links">
+        {INTERESTS.map((interest, i) => (
+          <>
+            {i > 0 && <span class="dot">·</span>}
+            <a href={interest.href}>{interest.label}</a>
+          </>
+        ))}
+      </div>
     </section>
 
     <section>
