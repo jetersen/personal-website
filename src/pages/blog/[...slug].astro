@@ -23,6 +23,7 @@ const { posts, post } = Astro.props;
 const rendered = post ? await render(post) : null;
 ---
 
+<>
 {posts ? (
   <Base title={`Blog — ${SITE_NAME}`}>
     <h1 class="page-title">Blog</h1>
@@ -60,3 +61,4 @@ const rendered = post ? await render(post) : null;
     </article>
   </Base>
 )}
+</>

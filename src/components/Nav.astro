@@ -13,13 +13,10 @@ const links = [
 ];
 ---
 
-<nav>
-  {links.map((link, i) => (
-    <>
-      {i > 0 && <span class="dot">·</span>}
-      <a href={link.href} class={pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) ? 'active' : ''}>
-        {link.label}
-      </a>
-    </>
-  ))}
-</nav>
+<>
+  <nav>
+    {links.map((link, i) => (
+      <>{i > 0 && <span class="dot">·</span>}<a href={link.href} class={pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) ? 'active' : ''}>{link.label}</a></>
+    ))}
+  </nav>
+</>

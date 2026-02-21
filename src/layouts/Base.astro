@@ -14,6 +14,7 @@ const hasBlog = (await getCollection('blog'))
   .some((post) => import.meta.env.PROD ? !post.data.draft : true);
 ---
 
+<>
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,3 +34,4 @@ const hasBlog = (await getCollection('blog'))
     </div>
   </body>
 </html>
+</>
