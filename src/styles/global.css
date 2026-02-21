@@ -13,8 +13,8 @@
   --text: #1c1917;
   --accent: #b45309;
   --text-muted: #78716c;
-  --font-body: 'DM Mono', monospace;
-  --font-display: 'Instrument Serif', serif;
+  --font-body: 'JetBrains Mono', 'Cascadia Code', 'Source Code Pro', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  --font-display: Charter, 'Bitstream Charter', 'Iowan Old Style', Palatino, Georgia, serif;
 }
 
 @media (prefers-color-scheme: dark) {
