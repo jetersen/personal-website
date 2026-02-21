@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import SocialIcon from '../components/SocialIcon.astro';
+import { SITE_NAME, ROLE, COMPANY, SOCIAL_LINKS } from '../consts';
+---
+
+<Base title={SITE_NAME}>
+  <div class="landing stagger">
+    <h1>{SITE_NAME}<span class="cursor">_</span></h1>
+    <p class="role">{ROLE} at {COMPANY}</p>
+    <div class="social-links">
+      {SOCIAL_LINKS.map((link, i) => (
+        <>
+          {i > 0 && <span class="dot">·</span>}
+          <SocialIcon label={link.label} href={link.href} />
+        </>
+      ))}
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,66 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import { SITE_NAME } from '../../consts';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog'))
+    .filter((post) => import.meta.env.PROD ? !post.data.draft : true)
+    .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+  if (posts.length === 0) return [];
+
+  return [
+    { params: { slug: undefined }, props: { posts, post: null } },
+    ...posts.map((post) => ({
+      params: { slug: post.id },
+      props: { posts: null, post },
+    })),
+  ];
+}
+
+const { posts, post } = Astro.props;
+const rendered = post ? await render(post) : null;
+---
+
+{posts ? (
+  <Base title={`Blog — ${SITE_NAME}`}>
+    <div class="stagger">
+      <h1 class="page-title">Blog</h1>
+      <ul class="post-list">
+        {posts.map((p) => (
+          <li>
+            <a href={`/blog/${p.id}`}>{p.data.title}</a>
+            <div class="post-date">
+              <time datetime={p.data.pubDate.toISOString()}>
+                {p.data.pubDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                })}
+              </time>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </Base>
+) : (
+  <Base title={`${post.data.title} — ${SITE_NAME}`} wide>
+    <div class="stagger">
+      <article>
+        <h1 class="page-title">{post.data.title}</h1>
+        <p class="post-date">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </time>
+        </p>
+        {rendered && <rendered.Content />}
+      </article>
+    </div>
+  </Base>
+)}

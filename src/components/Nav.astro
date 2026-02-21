@@ -1,0 +1,25 @@
+---
+interface Props {
+  hasBlog: boolean;
+}
+
+const { hasBlog } = Astro.props;
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/', label: 'home' },
+  { href: '/portfolio', label: 'portfolio' },
+  ...(hasBlog ? [{ href: '/blog', label: 'blog' }] : []),
+];
+---
+
+<nav>
+  {links.map((link, i) => (
+    <>
+      {i > 0 && <span class="dot">·</span>}
+      <a href={link.href} class={pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href)) ? 'active' : ''}>
+        {link.label}
+      </a>
+    </>
+  ))}
+</nav>
