@@ -39,6 +39,8 @@ body {
   color: var(--text);
   line-height: 1.7;
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Accent bar */
@@ -51,8 +53,12 @@ body {
 /* Layout */
 .page-wrapper {
   max-width: 640px;
+  width: 100%;
   margin: 0 auto;
   padding: 2rem 1.5rem 4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .page-wrapper--wide {
@@ -102,6 +108,7 @@ nav {
   padding: 1.5rem 0;
   font-size: 0.8125rem;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 
 nav a {
@@ -119,8 +126,15 @@ nav .dot {
   user-select: none;
 }
 
+.page-wrapper > main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Landing page */
 .landing {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
