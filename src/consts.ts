@@ -14,8 +14,8 @@ export const INTERESTS = [
 ] as const;
 
 export const SOCIAL_LINKS = [
-  { label: 'github', href: 'https://github.com/jetersen' },
-  { label: 'linkedin', href: 'https://www.linkedin.com/in/jetersen' },
-  // { label: 'bluesky', href: 'https://bsky.app/profile/jetersen.bsky.social' },
-  { label: 'twitter', href: 'https://x.com/jetersen' },
+  { label: 'GitHub', href: 'https://github.com/jetersen' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/jetersen' },
+  // { label: 'Bluesky', href: 'https://bsky.app/profile/jetersen.bsky.social' },
+  { label: 'Twitter', href: 'https://x.com/jetersen' },
 ] as const;
