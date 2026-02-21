@@ -67,7 +67,7 @@ try {
         {INTERESTS.map((interest, i) => (
           <>
             {i > 0 && <span class="dot">·</span>}
-            <a href={interest.href}>{interest.label}</a>
+            <a href={interest.href} target="_blank" rel="noopener noreferrer">{interest.label}</a>
           </>
         ))}
       </div>
@@ -79,7 +79,7 @@ try {
         <ul class="repo-list">
           {repos.map((repo) => (
             <li>
-              <a href={repo.html_url}>{repo.name}</a>
+              <a href={repo.html_url} target="_blank" rel="noopener noreferrer">{repo.name}</a>
               {repo.description && <p class="repo-desc">{repo.description}</p>}
               <span class="repo-meta">
                 {repo.language && (
@@ -96,7 +96,7 @@ try {
         </ul>
       ) : (
         <p>
-          Check out my work on <a href={`https://github.com/${GITHUB_USERNAME}`}>GitHub</a>.
+          Check out my work on <a href={`https://github.com/${GITHUB_USERNAME}`} target="_blank" rel="noopener noreferrer">GitHub</a>.
         </p>
       )}
     </section>

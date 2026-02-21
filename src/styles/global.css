@@ -178,6 +178,7 @@ nav .dot {
 /* Interests links */
 .interests-links {
   font-size: 0.875rem;
+  font-weight: 500;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
