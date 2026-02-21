@@ -240,12 +240,6 @@ nav .dot {
   user-select: none;
 }
 
-/* Blog empty state */
-.empty-state {
-  color: var(--text-muted);
-  font-style: italic;
-}
-
 /* Section spacing */
 section {
   margin-bottom: 3rem;
