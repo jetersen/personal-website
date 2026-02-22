@@ -85,7 +85,7 @@ Ordered:
 ## Tables
 
 | Tool | Purpose | Status |
-|------|---------|--------|
+| ---- | ------- | ------ |
 | Kubernetes | Orchestration | Daily driver |
 | Home Assistant | Home automation | Tinkering |
 | Niri | Window manager | Exploring |
