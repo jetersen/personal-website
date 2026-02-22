@@ -29,5 +29,11 @@ export default defineConfig({
     svgo: true,
   },
 
-  integrations: [moveStylesToEndOfHead(), compress(), injectStyleHashes(), sitemap()],
+  integrations: [
+    moveStylesToEndOfHead(),
+    compress(),
+    injectStyleHashes(),
+    sitemap({
+      lastmod: new Date(),
+    })],
 });
