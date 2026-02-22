@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { SITE_NAME, GITHUB_USERNAME, INTERESTS } from '../consts';
+import { fetchLangColors } from '../lib/langColors';
 
 interface GitHubRepo {
   name: string;
@@ -10,7 +11,7 @@ interface GitHubRepo {
   stargazers_count: number;
 }
 
-const exclude = ['.github', 'personal-website', 'dotnet.restore.slow.github.action', 'dotnet-codespaces'];
+const exclude = ['.github', 'personal-website', 'jetersen', 'dotnet.restore.slow.github.action', 'dotnet-codespaces'];
 
 let repos: GitHubRepo[] = [];
 const token = import.meta.env.GITHUB_TOKEN;
@@ -45,16 +46,11 @@ try {
 
 let langColors: Record<string, string | null> = {};
 try {
-  const res = await fetch('https://raw.githubusercontent.com/ozh/github-colors/master/colors.json');
-  if (res.ok) {
-    const data: Record<string, { color: string | null }> = await res.json();
-    for (const [lang, { color }] of Object.entries(data)) {
-      langColors[lang] = color;
-    }
-  }
+  langColors = await fetchLangColors();
 } catch {
   // Colors are cosmetic, fine to skip
 }
+
 ---
 
 <>
@@ -83,8 +79,10 @@ try {
               {repo.description && <p class="repo-desc">{repo.description}</p>}
               <span class="repo-meta">
                 {repo.language && (
-                  <span class="repo-lang" {...(langColors[repo.language!] ? { style: `color: ${langColors[repo.language!]}` } : {})}>
-                    <span class="lang-dot" aria-hidden="true">●</span>
+                  <span class="repo-lang">
+                    <svg class="lang-dot" viewBox="0 0 16 16" width="10" height="10" aria-hidden="true">
+                      <circle cx="8" cy="8" r="8" fill={langColors[repo.language] ?? 'currentColor'} />
+                    </svg>
                     {repo.language}
                   </span>
                 )}
