@@ -1,6 +1,6 @@
 ---
 import Nav from '../components/Nav.astro';
-import '../styles/global.css';
+import css from '../styles/global.css?url';
 import { getCollection } from 'astro:content';
 import faviconSvg from '../icons/favicon.svg';
 
@@ -24,6 +24,7 @@ const hasBlog = (await getCollection('blog'))
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
+    <link rel="stylesheet" href={css} />
   </head>
   <body>
     <div class="accent-bar"></div>
