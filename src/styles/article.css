@@ -62,7 +62,7 @@ article :not(pre) > code {
   border-radius: 3px;
 }
 
-/* Prism syntax highlighting — warm terminal theme */
+/* Prism syntax highlighting - warm terminal theme */
 code[class*="language-"],
 pre[class*="language-"] {
   color: #292524;
@@ -162,7 +162,7 @@ article img {
   height: auto;
 }
 
-/* Code blocks — container styling */
+/* Code blocks - container styling */
 article pre {
   background: #efeae2;
   padding: 1.25rem;

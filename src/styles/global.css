@@ -73,7 +73,7 @@ h1 {
   color: var(--text);
 }
 
-/* Section headers (portfolio, etc.) — scoped to avoid bleeding into prose */
+/* Section headers (portfolio, etc.) - scoped to avoid bleeding into prose */
 .section-header {
   font-family: var(--font-body);
   font-size: 0.875rem;

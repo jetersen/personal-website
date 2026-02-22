@@ -26,7 +26,7 @@ const rendered = post ? await render(post) : null;
 
 <>
 {posts ? (
-  <Base title={`Blog — ${SITE_NAME}`}>
+  <Base title={`Blog - ${SITE_NAME}`}>
     <h1 class="page-title">Blog</h1>
     <ul class="post-list">
       {posts.map((p) => (
@@ -46,7 +46,7 @@ const rendered = post ? await render(post) : null;
     </ul>
   </Base>
 ) : (
-  <Base title={`${post.data.title} — ${SITE_NAME}`} wide>
+  <Base title={`${post.data.title} - ${SITE_NAME}`} wide>
     <article>
       <h1 class="page-title">{post.data.title}</h1>
       <p class="post-date">

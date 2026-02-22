@@ -11,7 +11,7 @@ interface Props {
   wide?: boolean;
 }
 
-const { title, description = `${SITE_NAME} — ${ROLE} at ${COMPANY}`, wide = false } = Astro.props;
+const { title, description = `${SITE_NAME} - ${ROLE} at ${COMPANY}`, wide = false } = Astro.props;
 
 const hasBlog = (await getCollection('blog'))
   .some((post) => import.meta.env.PROD ? !post.data.draft : true);

@@ -80,7 +80,7 @@ Ordered:
 
 ## Blockquotes
 
-> Infrastructure as code isn't just a practice — it's a mindset. If you can't reproduce it from a commit, it doesn't exist.
+> Infrastructure as code isn't just a practice - it's a mindset. If you can't reproduce it from a commit, it doesn't exist.
 
 ## Tables
 
