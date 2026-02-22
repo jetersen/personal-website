@@ -9,9 +9,24 @@
 
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
+  ! X-Frame-Options
+  ! Referrer-Policy
+  ! Permissions-Policy
+  ! Cross-Origin-Opener-Policy
+  ! Content-Security-Policy
 
 /*.png
   Cache-Control: public, max-age=2592000
+  ! X-Frame-Options
+  ! Referrer-Policy
+  ! Permissions-Policy
+  ! Cross-Origin-Opener-Policy
+  ! Content-Security-Policy
 
 /*.ico
   Cache-Control: public, max-age=2592000
+  ! X-Frame-Options
+  ! Referrer-Policy
+  ! Permissions-Policy
+  ! Cross-Origin-Opener-Policy
+  ! Content-Security-Policy
