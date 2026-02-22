@@ -3,13 +3,15 @@ import Nav from '../components/Nav.astro';
 import css from '../styles/global.css?url';
 import { getCollection } from 'astro:content';
 import faviconSvg from '../icons/favicon.svg';
+import { SITE_NAME, ROLE, COMPANY } from '../consts';
 
 interface Props {
   title: string;
+  description?: string;
   wide?: boolean;
 }
 
-const { title, wide = false } = Astro.props;
+const { title, description = `${SITE_NAME} — ${ROLE} at ${COMPANY}`, wide = false } = Astro.props;
 
 const hasBlog = (await getCollection('blog'))
   .some((post) => import.meta.env.PROD ? !post.data.draft : true);
@@ -23,6 +25,7 @@ const hasBlog = (await getCollection('blog'))
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <meta name="description" content={description} />
     <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
     <link rel="stylesheet" href={css} />
   </head>
