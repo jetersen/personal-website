@@ -28,6 +28,6 @@
 # IN THE DIGITAL SINGLE MARKET.
 
 User-Agent: *
-Content-Signal: ai-train=no, search=yes, ai-input=yes
+# Content-Signal: ai-train=no, search=yes, ai-input=yes
 Allow: /
 Sitemap: https://jetersen.dev/sitemap-index.xml
