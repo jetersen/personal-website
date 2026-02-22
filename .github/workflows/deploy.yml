@@ -20,6 +20,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
+      - name: Inject Early Hints headers
+        run: |
+          CSS=$(find dist/_astro -name '*.css' -printf '/_astro/%f' | head -1)
+          FAV=$(find dist/_astro -name 'favicon.*.svg' -printf '/_astro/%f' | head -1)
+          sed -i "/^\\/\*$/a\\  Link: <${CSS}>; rel=preload; as=style\n  Link: <${FAV}>; rel=preload; as=image" dist/_headers
       - uses: cloudflare/wrangler-action@v3
         with:
           wranglerVersion: "4"
