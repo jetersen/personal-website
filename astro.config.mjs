@@ -4,6 +4,8 @@ import { defineConfig, envField } from 'astro/config';
 import compress from 'astro-compress';
 import { moveStylesToEndOfHead, injectStyleHashes } from './src/integrations/inline-styles.mjs';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://jetersen.dev',
@@ -27,5 +29,5 @@ export default defineConfig({
     svgo: true,
   },
 
-  integrations: [moveStylesToEndOfHead(), compress(), injectStyleHashes()],
+  integrations: [moveStylesToEndOfHead(), compress(), injectStyleHashes(), sitemap()],
 });
