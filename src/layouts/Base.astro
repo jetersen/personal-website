@@ -1,6 +1,6 @@
 ---
 import Nav from '../components/Nav.astro';
-import css from '../styles/global.css?url';
+import '../styles/global.css';
 import { getCollection } from 'astro:content';
 import faviconSvg from '../icons/favicon.svg';
 import { SITE_NAME, ROLE, COMPANY } from '../consts';
@@ -27,7 +27,6 @@ const hasBlog = (await getCollection('blog'))
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" href={faviconSvg.src} type="image/svg+xml" />
-    <link rel="stylesheet" href={css} />
   </head>
   <body>
     <div class="accent-bar"></div>

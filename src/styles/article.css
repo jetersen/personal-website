@@ -1,0 +1,268 @@
+/* Blog post list */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+.post-list .post-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Blog post detail */
+.post-date {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+/* ─── Article prose ─── */
+
+article h2 {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+article h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+article h4 {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Inline code */
+article :not(pre) > code {
+  font-family: var(--font-body);
+  font-size: 0.875em;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+/* Prism syntax highlighting — warm terminal theme */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #292524;
+  text-shadow: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata { color: #6b6560; font-style: italic; }
+
+.token.punctuation { color: #57534e; }
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol { color: #8a5c00; }
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin { color: #3d6b00; }
+
+.token.operator,
+.token.entity,
+.token.url { color: #9a3412; }
+
+.token.atrule,
+.token.attr-value,
+.token.keyword { color: #9a3412; }
+
+.token.function,
+.token.class-name { color: #92400e; }
+
+.token.regex,
+.token.important,
+.token.variable { color: #a63a0a; }
+
+.token.string-expression,
+.token.inserted { color: #166534; }
+
+.token.deleted { color: #991b1b; }
+
+@media (prefers-color-scheme: dark) {
+  code[class*="language-"],
+  pre[class*="language-"] {
+    color: #d6d3d1;
+  }
+
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata { color: #908a84; }
+
+  .token.punctuation { color: #a8a29e; }
+
+  .token.property,
+  .token.tag,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol { color: #d97706; }
+
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin { color: #a3e635; }
+
+  .token.operator,
+  .token.entity,
+  .token.url { color: #fbbf24; }
+
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword { color: #fbbf24; }
+
+  .token.function,
+  .token.class-name { color: #fb923c; }
+
+  .token.regex,
+  .token.important,
+  .token.variable { color: #f97316; }
+
+  .token.string-expression,
+  .token.inserted { color: #4ade80; }
+
+  .token.deleted { color: #f87171; }
+}
+
+/* Images */
+article img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Code blocks — container styling */
+article pre {
+  background: #efeae2;
+  padding: 1.25rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+  font-size: 0.8125rem;
+  line-height: 1.7;
+  border: 1px solid color-mix(in srgb, var(--text) 6%, transparent);
+}
+
+@media (prefers-color-scheme: dark) {
+  article pre {
+    background: #1c1917;
+  }
+}
+
+article pre code {
+  background: none;
+  color: inherit;
+  padding: 0;
+  font-size: inherit;
+}
+
+/* Lists */
+article ul,
+article ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+article li {
+  margin-bottom: 0.3rem;
+}
+
+article li::marker {
+  color: var(--accent);
+}
+
+article ul ul,
+article ol ul,
+article ul ol,
+article ol ol {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Blockquotes */
+article blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+  font-style: italic;
+  background: color-mix(in srgb, var(--accent) 4%, transparent);
+  border-radius: 0 4px 4px 0;
+}
+
+article blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tables */
+article table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.8125rem;
+}
+
+article th {
+  text-align: left;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid color-mix(in srgb, var(--text) 15%, transparent);
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+article td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 8%, transparent);
+}
+
+/* Horizontal rule */
+article hr {
+  border: none;
+  border-top: 1px solid color-mix(in srgb, var(--text) 12%, transparent);
+  margin: 2rem 0;
+}
+
+/* Strong & emphasis */
+article strong {
+  font-weight: 500;
+}
+
+article em {
+  font-style: italic;
+}
