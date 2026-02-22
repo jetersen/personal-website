@@ -13,4 +13,7 @@ export default defineConfig({
       GITHUB_TOKEN: envField.string({ context: 'server', access: 'secret', optional: true }),
     },
   },
+  experimental: {
+    svgo: true,
+  },
 });

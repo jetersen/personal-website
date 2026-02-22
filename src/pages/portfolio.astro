@@ -66,7 +66,7 @@ try {
       <div class="interests-links">
         {INTERESTS.map((interest, i) => (
           <>
-            {i > 0 && <span class="dot">·</span>}
+            {i > 0 && <span class="dot" aria-hidden="true">·</span>}
             <a href={interest.href} target="_blank" rel="noopener noreferrer">{interest.label}</a>
           </>
         ))}
@@ -84,11 +84,11 @@ try {
               <span class="repo-meta">
                 {repo.language && (
                   <span class="repo-lang" {...(langColors[repo.language!] ? { style: `color: ${langColors[repo.language!]}` } : {})}>
-                    <span class="lang-dot">●</span>
+                    <span class="lang-dot" aria-hidden="true">●</span>
                     {repo.language}
                   </span>
                 )}
-                {repo.language && repo.stargazers_count > 0 && <span class="dot">·</span>}
+                {repo.language && repo.stargazers_count > 0 && <span class="dot" aria-hidden="true">·</span>}
                 {repo.stargazers_count > 0 && <span><span class="star">★</span> {repo.stargazers_count}</span>}
               </span>
             </li>

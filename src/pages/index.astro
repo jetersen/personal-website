@@ -7,12 +7,12 @@ import { SITE_NAME, ROLE, COMPANY, SOCIAL_LINKS } from '../consts';
 <>
 <Base title={SITE_NAME}>
   <div class="landing">
-    <h1>{SITE_NAME}<span class="cursor">_</span></h1>
+    <h1>{SITE_NAME}<span class="cursor" aria-hidden="true">_</span></h1>
     <p class="role">{ROLE} at {COMPANY}</p>
     <div class="social-links">
       {SOCIAL_LINKS.map((link, i) => (
         <>
-          {i > 0 && <span class="dot">·</span>}
+          {i > 0 && <span class="dot" aria-hidden="true">·</span>}
           <SocialIcon label={link.label} href={link.href} />
         </>
       ))}
