@@ -224,21 +224,18 @@ nav .dot {
 
 .repo-meta {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: var(--text-muted);
+  vertical-align: middle;
 }
 
-.repo-lang .lang-dot {
-  margin-right: 0.25rem;
-  vertical-align: middle;
+.repo-meta .lang-dot {
+  margin-right: 0.30rem;
 }
 
 .repo-meta .star {
+  margin-right: 0.30rem;
   color: var(--accent);
-  margin-right: 0.2rem;
-  font-size: 1rem;
-  line-height: 1;
-  vertical-align: middle;
 }
 
 .repo-meta .dot {
@@ -251,3 +248,6 @@ section {
   margin-bottom: 3rem;
 }
 
+.display-none {
+  display: none;
+}

@@ -55,6 +55,16 @@ try {
 
 <>
 <Base title={`Portfolio — ${SITE_NAME}`} description="Interests, projects, and open source work by Joseph Petersen.">
+  <svg xmlns="http://www.w3.org/2000/svg" class="display-none">
+    <defs>
+      <symbol id="lang-dot" viewBox="0 0 16 16">
+        <circle cx="8" cy="8" r="8" />
+      </symbol>
+      <symbol id="star-icon" viewBox="0 0 24 24">
+        <path d="M12 .288l2.833 8.718h9.167l-7.417 5.389 2.833 8.718-7.416-5.388-7.417 5.388 2.833-8.718-7.416-5.389h9.167z"/>
+      </symbol>
+    </defs>
+  </svg>
   <h1 class="page-title">Portfolio</h1>
 
     <section>
@@ -80,14 +90,21 @@ try {
               <span class="repo-meta">
                 {repo.language && (
                   <span class="repo-lang">
-                    <svg class="lang-dot" viewBox="0 0 16 16" width="10" height="10" aria-hidden="true">
-                      <circle cx="8" cy="8" r="8" fill={langColors[repo.language] ?? 'currentColor'} />
+                    <svg class="lang-dot" width="12" height="12" aria-hidden="true">
+                      <use href="#lang-dot" fill={langColors[repo.language] ?? 'currentColor'} />
                     </svg>
                     {repo.language}
                   </span>
                 )}
                 {repo.language && repo.stargazers_count > 0 && <span class="dot" aria-hidden="true">·</span>}
-                {repo.stargazers_count > 0 && <span><span class="star">★</span> {repo.stargazers_count}</span>}
+                {repo.stargazers_count > 0 && (
+                  <span class="repo-lang">
+                    <svg class="star" width="12" height="12" fill="currentColor" aria-hidden="true">
+                      <use href="#star-icon" />
+                    </svg>
+                    {repo.stargazers_count}
+                  </span>
+                )}
               </span>
             </li>
           ))}
