@@ -1,5 +1,5 @@
 export const SITE_NAME = 'Joseph Petersen';
-export const ROLE = 'Senior DevOps Engineer';
+export const ROLE = 'Principal Platform Engineer';
 export const COMPANY = 'MovieStarPlanet';
 
 export const GITHUB_USERNAME = 'jetersen';
